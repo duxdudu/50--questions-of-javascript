@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Assignment #2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Individual Assignment #2 </h1>
+        <h1>Interactive Web Development</h1>
+        <h1>DUSHIME Dieudonne <span>222008981</span> </h1>
+
+        <h2>1. Create an array of 20 numbers and write a function to find the sum of all numbers.</h2>
+        <p id="question1"></p>
+            <script>
+                const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+                function sumArray(numbers) {
+                    return numbers.reduce((acc, curr) => acc + curr, 0);
+                }
+                document.getElementById("question1").innerHTML=("Sum: <code>" + sumArray(numbers) + "</code>");
+            </script>
+        
+        <h2>2. Write a function to find the largest number in an array of 20 numbers.</h2>
+        <p id="question2"></p>
+            <script>
+                function largestNumber(numbers) {
+                    return Math.max(...numbers);
+                }
+                document.getElementById("question2").innerHTML=("Largest Number: <code>" + largestNumber(numbers) + "</code>");
+            </script>
+
+        <h2>3. Write a function to sort an array of 20 numbers in ascending order.</h2>
+        <p id="question3"></p>
+            <script>
+                function sortArray(numbers) {
+                    return numbers.sort((a, b) => a - b);
+                }
+                document.getElementById("question3").innerHTML=("Sorted Array: <code>" + sortArray([...numbers]) + "</code>");
+            </script>
+
+
+        <h2>4. Write a function to reverse an array of 20 numbers.</h2>
+        <p id="question4"></p>
+            <script>
+                function reverseArray(numbers) {
+                    return numbers.reverse();
+                }
+                document.getElementById("question4").innerHTML=("Reversed Array: <code>" + reverseArray([...numbers]) + "</code>");
+            </script>
+        <h2>5. Write a function that takes an array of 20 numbers and returns only even numbers.</h2>
+        <p id="question5"></p>
+            <script>
+                function filterEvenNumbers(numbers) {
+                    return numbers.filter(num => num % 2 === 0);
+                }
+                document.getElementById("question5").innerHTML=("Even Numbers: <code>" + filterEvenNumbers(numbers) + "</code>");
+            </script>
+    
+
+        <h2>6. Write a function that takes an array of 20 numbers and returns only odd numbers.</h2>
+        <p id="question6"></p>
+            <script>
+                function filterOddNumbers(numbers) {
+                    return numbers.filter(num => num % 2 !== 0);
+                }
+                document.getElementById("question6").innerHTML=("Odd Numbers: <code>" + filterOddNumbers(numbers) + "</code>");
+            </script>
+      
+
+        <h2>7. Write a function that takes an array of 20 numbers and returns the average of those numbers.</h2>
+        <p id="question7"></p>
+            <script>
+                function averageArray(numbers) {
+                    const sum = sumArray(numbers);
+                    return sum / numbers.length;
+                }
+                document.getElementById("question7").innerHTML=("Average: <code>" + averageArray(numbers) + "</code>");
+            </script>
+       
+
+        <h2>8. Write a function to remove duplicates from an array of 20 numbers.</h2>
+        <p id="question8"></p>
+            <script>
+                function removeDuplicates(numbers) {
+                    return [...new Set(numbers)];
+                }
+                document.getElementById("question8").innerHTML=("Array without Duplicates: <code>" + removeDuplicates(numbers) + "</code>");
+            </script>
+     
+
+        <h2>9. Write a function that takes an array of 20 numbers and returns the median value.</h2>
+        <p id="question9"></p>
+            <script>
+                function medianArray(numbers) {
+                    const sorted = sortArray(numbers);
+                    const mid = Math.floor(sorted.length / 2);
+                    return sorted.length % 2 !== 0 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+                }
+                document.getElementById("question9").innerHTML=("Median: <code>" + medianArray(numbers) + "</code>");
+            </script>
+       
+
+        <h2>10. Write a function to multiply all elements in an array of 20 numbers by 2.</h2>
+        <p id="question10"></p>
+            <script>
+                function multiplyByTwo(numbers) {
+                    return numbers.map(num => num * 2);
+                }
+                document.getElementById("question10").innerHTML=("Multiplied by 2: <code>" + multiplyByTwo(numbers) + "</code>");
+            </script>
+       
+
+        <h2>11. Create an array of 20 names and write a function to print each name on a new line.</h2>
+        <p id="question11"></p>
+            <script>
+                const names = ["pouline", "boner", "ezia", "elie", "max", "paccy", "mark", "edison", "yvan", "nixon", 
+                               "masera", "matter", "nyamagumba", "mukasa", "indigo", "hopefull", "mugisha", "Rachette", "muhire", "mugisha"];
+                function printNames(names) {
+                    return names.join("<br>");
+                }
+                document.getElementById("question11").innerHTML=("Names:<br><code>" + printNames(names) + "</code>");
+            </script>
+      
+
+        <h2>12. Write a function to sort an array of 20 names alphabetically.</h2>
+        <p id="question12"></p>
+            <script>
+                function sortNames(names) {
+                    return names.sort();
+                }
+                document.getElementById("question12").innerHTML=("Sorted Names: <code>" + sortNames([...names]) + "</code>");
+            </script>
+        
+
+        <h2>13. Write a function that checks if a specific name exists in an array of 20 names and returns true or false.</h2>
+        <p id="question13"></p>
+            <script>
+                function nameExists(names, name) {
+                    return names.includes(name);
+                }
+                document.getElementById("question13").innerHTML=("Does 'Eva' exist? <code>" + nameExists(names, 'dux') + "</code>");
+            </script>
+  
+
+        <h2>14. Write a function to find the longest name in an array of 20 names.</h2>
+        <p id="question14"></p>
+            <script>
+                function longestName(names) {
+                    return names.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+                }
+                document.getElementById("question14").innerHTML=("Longest Name: <code>" + longestName(names) + "</code>");
+            </script>
+     
+
+        <h2>15. Write a function to find names that start with a specific letter in an array of 20 names.</h2>
+        <p id="question15"></p>
+
+            <script>
+                function namesStartingWith(names, letter) {
+                    return names.filter(name => name.startsWith(letter));
+                }
+                document.getElementById("question15").innerHTML=("Names starting with 'A': <code>" + namesStartingWith(names, 'A') + "</code>");
+            </script>
+      
+
+        <h2>16. Write a function to convert all names to uppercase in an array of 20 names.</h2>
+        <p id="question16"></p>
+            <script>
+                function uppercaseNames(names) {
+                    return names.map(name => name.toUpperCase());
+                }
+                document.getElementById("question16").innerHTML=("Uppercase Names: <code>" + uppercaseNames(names) + "</code>");
+            </script>
+
+
+
+<h2>17. Write a function to remove a specific name from an array of 20 names.</h2>
+<p id="question17"></p>
+    <script>
+        function removeName(names, nameToRemove) {
+            return names.filter(name => name !== nameToRemove);
+        }
+        document.getElementById("question17").innerHTML=("Names without 'Charlie': <code>" + removeName(names, 'Charlie') + "</code>");
+    </script>
+
+
+<h2>18. Write a function to count how many names contain the letter "a" in an array of 20 names.</h2>
+<p id="question18"></p>
+    <script>
+        function countNamesWithA(names) {
+            return names.filter(name => name.toLowerCase().includes('a')).length;
+        }
+        document.getElementById("question18").innerHTML=("Number of names containing 'a': <code>" + countNamesWithA(names) + "</code>");
+    </script>
+
+
+<h2>19. Write a function to concatenate all names in an array of 20 names into a single string, separated by commas.</h2>
+<p id="question19"></p>
+    <script>
+        function concatenateNames(names) {
+            return names.join(", ");
+        }
+        document.getElementById("question19").innerHTML=("Concatenated Names: <code>" + concatenateNames(names) + "</code>");
+    </script>
+
+
+<h2>20. Write a function to reverse the order of an array of 20 names.</h2>
+<p id="question20"></p>
+    <script>
+        function reverseNames(names) {
+            return names.reverse();
+        }
+        document.getElementById("question20").innerHTML=("Reversed Names: <code>" + reverseNames([...names]) + "</code>");
+    </script>
+
+<h2>21. Create a JavaScript object that represents a person.</h2>
+<p id="question21"></p>
+            <script>
+                const person = {
+                    name: "Dieudonne",
+                    age: 25,
+                    occupation: "Software Engineer"
+                };
+                document.getElementById("question21").innerHTML=("Person Object: <code>" + JSON.stringify(person) + "</code>");
+            </script>
+    
+
+<h2>22. Format person object information.</h2>
+<p id="question22"></p>
+            <script>
+                function formatPersonInfo(person) {
+                    return `Name: ${person.name}, Age: ${person.age}, Occupation: ${person.occupation}`;
+                }
+                document.getElementById("question22").innerHTML=("Formatted Person Info: <code>" + formatPersonInfo(person) + "</code>");
+            </script>
+
+<h2>23. Add a new property to an existing object.</h2>
+<p id="question23"></p>
+            <script>
+                function addPropertyToObject(obj, propertyName, propertyValue) {
+                    obj[propertyName] = propertyValue;
+                    return obj;
+                }
+                const updatedPerson = addPropertyToObject(person, 'location', 'Rwanda');
+                document.getElementById("question23").innerHTML=("Updated Person: <code>" + JSON.stringify(updatedPerson) + "</code>");
+            </script>
+
+<h2>24. Remove a property from an existing object.</h2>
+<p id="question24"></p>
+            <script>
+                function removePropertyFromObject(obj, propertyName) {
+                    delete obj[propertyName];
+                    return obj;
+                }
+                const personWithoutAge = removePropertyFromObject({...updatedPerson}, 'age'); 
+                document.getElementById("question24").innerHTML=("Person without 'age': <code>" + JSON.stringify(personWithoutAge) + "</code>");
+            </script>
+        
+
+<h2>25. List all properties and values of a JavaScript object.</h2>
+ <p id="question25"></p>
+            <script>
+                function listObjectProperties(obj) {
+                    let result = "";
+                    for (const i in obj) {
+                        result += `${i}: ${obj[i]}<br>`;
+                    }
+                    return result;
+                }
+                document.getElementById("question25").innerHTML=("Person Properties:<br><code>" + listObjectProperties(person) + "</code>");
+            </script>
+        </p>
+
+        <h2>26. Merge two objects into one.</h2>
+        <p>
+            <script>
+                const address = { city: "Kigali", poster: "10001" };
+                const mergedObject = { ...person, ...address };
+                document.write("Merged Object: <code>" + JSON.stringify(mergedObject) + "</code>");
+            </script>
+        </p>
+
+        <h2>27. Check if a property exists in an object.</h2>
+        <p>
+            <script>
+                function hasProperty(obj, prop) {
+                    return obj.hasOwnProperty(prop);
+                }
+                document.write("Has 'name'? <code>" + hasProperty(person, 'name') + "</code><br>");
+                document.write("Has 'country'? <code>" + hasProperty(person, 'country') + "</code>");
+            </script>
+        </p>
+        <h2>28. Clone an object without referencing the original one.</h2>
+        <p>
+            <script>
+                function cloneObject(obj) {
+                    return JSON.parse(JSON.stringify(obj));
+                }
+                const clonedPerson = cloneObject(person);
+                document.write("Cloned Person: <code>" + JSON.stringify(clonedPerson) + "</code>");
+            </script>
+        </p>
+
+        <h2>29. Loop through an array of objects and print a specific property.</h2>
+        <p>
+            <script>
+                const people = [
+                    { name: "Alice", age: 25 },
+                    { name: "Bob", age: 30 }
+                ];
+                function printProperty(objects, propertyName) {
+                    let result = "";
+                    for (let i = 0; i < objects.length; i++) {
+                        result += `${objects[i][propertyName]}<br>`;
+                    }
+                    return result;
+                }
+                document.write("Names:<br><code>" + printProperty(people, 'name') + "</code>");
+            </script>
+        </p>
+
+        <h2>30. Update a specific property of an object based on user input.</h2>
+        <input id="numb" >
+        <button type="button" onclick="myFunction()">Submit</button>
+        <p id="demo"></p>
+        <script>
+            function myFunction() {
+            let input = document.getElementById("numb").value;
+            
+            if (input) {
+              updatePersonProperty(person, input.trim());
+              document.getElementById("demo").innerHTML = "Updated Person: <code>" + JSON.stringify(person) + "</code>";
+            } else {
+              document.getElementById("demo").innerHTML = "Please enter your occupation  (e.g., age,40)";
+            }
+           }
+      
+         function updatePersonProperty(person, newValue) {
+            if (newValue !== null && newValue.trim() !== "") {
+              person["occupation"] = newValue;
+            }
+            return person;
+          }
+        
+        </script>
+        
+
+        <h2>31. Reverse a string.</h2>
+        <p>
+            <script>
+                function reverseString(str) {
+                    return str.split("").reverse().join("");
+                }
+                document.write("Reversed 'hello': <code>" + reverseString("dieudonne") + "</code>");
+            </script>
+        </p>
+
+        <h2>32. Count the number of vowels in a string.</h2>
+        <p>
+            <script>
+                function countVowels(str) {
+                    let count = 0;
+                    const vowels = "aeiouAEIOU";
+                    for (let i = 0; i < str.length; i++) {
+                        if (vowels.indexOf(str[i]) !== -1) {
+                            count++;
+                        }
+                    }
+                    return count;
+                }
+                document.write("Vowels in 'dieudonne': <code>" + countVowels("dieudonne") + "</code>");
+            </script>
+        </p>
+
+        <h2>33. Convert a string to uppercase without using built-in methods.</h2>
+        <p>
+            <script>
+                function toUpperCase(str) {
+                    let result = "";
+                    for (let i = 0; i < str.length; i++) {
+                        let charCode = str.charCodeAt(i);
+                        if (charCode >= 97 && charCode <= 122) { 
+                            charCode -= 32;
+                        }
+                        result += String.fromCharCode(charCode);
+                    }
+                    return result;
+                }
+                document.write("'duxforreally' to uppercase: <code>" + toUpperCase("duxforreally") + "</code>");
+            </script>
+        </p>
+
+        <h2>34. Find the length of a string without using .length.</h2>
+        <p>
+            <script>
+                function stringLength(str) {
+                    let count = 0;
+                    while (str[count] !== undefined) {
+                        count++;
+                    }
+                    return count;
+                }
+                document.write("Length of 'masera': <code>" + stringLength("masera") + "</code>");
+            </script>
+        </p>
+
+        <h2>35. Replace all spaces with hyphens in a string.</h2>
+        <p>
+            <script>
+                function replaceSpacesWithHyphens(str) {
+                    return str.replace(/ /g, "-");
+                }
+                document.write("'DUSHIME Dieudonne' with hyphens: <code>" + replaceSpacesWithHyphens("DUSHIME Dieudonne") + "</code>");
+            </script>
+        </p>
+
+        <h2>36. Extract the first 10 characters from a string.</h2>
+        <script>
+            function getFirstTenCharacters(str) {
+                return str.substring(0, 10);
+            }
+            document.write("First 10 characters of 'This is a long string': <code>" + getFirstTenCharacters("This is a long string") + "</code>");
+        </script>
+    </p>
+
+    <h2>37. Find and replace a word in a string.</h2>
+    <p>
+        <script>
+            function findAndReplace(str, wordToFind, wordToReplace) {
+                return str.replace(new RegExp(wordToFind, 'g'), wordToReplace); 
+            }
+            document.write("Replace 'dux' with 'dodos': <code>" + findAndReplace("Hello dux, dodos!", "Dodos", "JavaScript") + "</code>");
+        </script>
+    </p>
+
+    <h2>38. Split a string into an array of words.</h2>
+    <p>
+        <script>
+            function splitStringIntoWords(str) {
+                return str.split(" ");
+            }
+            document.write("String to array: <code>" + splitStringIntoWords("This is a string") + "</code>");
+        </script>
+    </p>
+
+    <h2>39. Remove all numbers from a string.</h2>
+    <p>
+        <script>
+            function removeNumbersFromString(str) {
+                return str.replace(/[0-9]/g, "")
+            }
+            document.write("Remove numbers from 'Dux5t1ng123': <code>" + removeNumbersFromString("dux5t1fd3ng123") + "</code>");
+        </script>
+    </p>
+
+    <h2>40. Insert a string into an existing string starting at position 7.</h2>
+    <p>
+        <script>
+            function insertStringAtPosition(originalString, stringToInsert, position) {
+                return originalString.slice(0, position) + stringToInsert + originalString.slice(position);
+            }
+            document.write("Insert ' max' at position 7: <code>" + insertStringAtPosition("duxforreally", " max", 7) + "</code>");
+        </script>
+    </p>
+
+    <h2>41. Change the background color of the webpage when a button is clicked.</h2>
+    <button onclick="document.body.style.backgroundColor = 'lightblue'">Change Background Color</button>
+
+    <h2>42. Hide an HTML element when a button is clicked.</h2>
+    <p id="myParagraph">This paragraph will be hidden.</p>
+    <button onclick="document.getElementById('myParagraph').style.display = 'none'">Hide Paragraph</button>
+
+    <h2>43. Create a new paragraph element and append it to the body.</h2>
+    <button onclick="
+        let newParagraph = document.createElement('p');
+        newParagraph.textContent = 'This is a new paragraph!';
+        document.body.appendChild(newParagraph);
+    ">Add Paragraph</button>
+
+    <h2>44. Remove all list items from an unordered list.</h2>
+    <ul id="myList">
+        <li>Door</li>
+        <li>Dog</li>
+        <li>Max</li>
+    </ul>
+    <button onclick="
+        const myList = document.getElementById('myList');
+        while (myList.firstChild) {
+            myList.removeChild(myList.firstChild);
+        }
+    ">Clear List</button>
+
+    <h2>45. Change the text content of a specific HTML element.</h2>
+    <h3 id="myHeading">Original Text</h3>
+    <button onclick="document.getElementById('myHeading').textContent = 'Text Changed!'">Change Heading</button>
+
+    <h2>46. Toggle a CSS class on an HTML element.</h2>
+    <p id="toggleableElement" class="">This paragraph has a class that can be toggled.</p>
+    <button onclick="
+        const element = document.getElementById('toggleableElement');
+        element.classList.toggle('highlight');
+    ">Toggle Class</button>
+    <style>
+        .highlight {
+            background-color: rgb(107, 107, 14);
+        }
+    </style>
+    <div></div>
+    <h2>47. Count the number of divs on the webpage.</h2>
+    <p>Div count: <span id="divCount"></span></p>
+    <script>
+        document.getElementById('divCount').textContent = document.getElementsByTagName('div').length;
+    </script>
+
+<h2>48. Get the value of a text input field and display it in a paragraph.</h2>
+<input type="text" id="myInput" placeholder="Enter text here">
+<button onclick="
+    const inputValue = document.getElementById('myInput').value;
+    document.getElementById('displayParagraph').textContent = 'You entered: ' + inputValue;
+">Display Text</button>
+<p id="displayParagraph"></p>
+
+<h2>49. Create a table with 3 rows and 3 columns, and populate it with numbers.</h2>
+<table id="myTable"></table>
+<script>
+    const table = document.getElementById('myTable');
+    let count = 1;
+    for (let i = 0; i < 3; i++) {
+        const row = table.insertRow();
+        for (let j = 0; j < 3; j++) {
+            const cell = row.insertCell();
+            cell.textContent = count++;
+        }
+    }
+</script>
+
+<h2>50. Validate a form.</h2>
+<form id="myForm" onsubmit="return validateForm()" >
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="nameError"></div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error" id="emailError"></div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="error" id="passwordError"></div>
+    </div>
+    <button type="submit" onclick={validateForm()}>Submit</button>
+</form>
+
+<script>
+    function validateForm() {
+        let isValid = true;
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        if (nameInput.value.trim() === "") {
+            document.getElementById('nameError').textContent = "Name is required";
+            isValid = false;
+        } else {
+            document.getElementById('nameError').textContent = ""; 
+        }
+
+        if (emailInput.value.trim() === "") {
+            document.getElementById('emailError').textContent = "Email is required";
+            isValid = false;
+        } else {
+            document.getElementById('emailError').textContent = ""; 
+        }
+
+        if (passwordInput.value.trim() === "") {
+            document.getElementById('passwordError').textContent = "Password is required";
+            isValid = false;
+        } else {
+            document.getElementById('passwordError').textContent = ""; 
+        }
+
+        return isValid; // Prevent form submission if not valid
+    }
+</script>
+</div>
+</body>
+</html>    
